@@ -1,6 +1,6 @@
 # Remove Background in Python
 
-این کد به صورت مختصر وظیفه حذف پس‌زمینه تصویر و ذخیره‌سازی تصویر خروجی را دارد. حالا به بخش‌های مختلف کد می‌پردازیم
+This code briefly handles removing the background from an image and saving the output image. Now, let's go over the different parts of the code.
 
 ## Installation
 
@@ -10,19 +10,23 @@ pip install rembg
 
 ## Contributing
 
-1. ایمپورت کتابخانه‌ها:
-   - `from rembg import remove`: این خط کتابخانه `rembg` را که برای حذف پس‌زمینه تصویر استفاده می‌شود، وارد می‌کند.
-   - `from PIL import Image`: این خط کتابخانه `PIL` (Python Imaging Library) را وارد می‌کند که برای کار با تصاویر به کار می‌رود. هرچند در این کد مستقیماً استفاده نشده است.
+Here's a brief explanation of the code in English:
 
-2. تعریف مسیرهای ورودی و خروجی:
-   - `input_path = "rayan.jpg"`: مسیر فایل ورودی (تصویر اصلی) را مشخص می‌کند.
-   - `output_path = "output.jpg"`: مسیر فایل خروجی (تصویر با پس‌زمینه حذف شده) را مشخص می‌کند.
+1.Importing Libraries:
+   - `from rembg import remove`: Imports the `rembg` library, which is used for removing the background from images.
+   - `from PIL import Image`: Imports the `PIL` (Python Imaging Library) for image manipulation, though it's not directly used in this code.
 
-3. باز کردن فایل‌های ورودی و خروجی:
-   - `with open(input_path , "rb") as i:`: فایل ورودی را در حالت خواندن باینری باز می‌کند.
-   - `with open(output_path , "wb") as o:`: فایل خروجی را در حالت نوشتن باینری باز می‌کند.
+2. Defining Input and Output Paths:
+   - `input_path = "rayan.jpg"`: Specifies the input file path (the original image).
+   - `output_path = "output.jpg"`: Specifies the output file path (the image with the background removed).
 
-4. خواندن، پردازش و نوشتن تصویر:
-   - `input = i.read()`: محتوای فایل ورودی را به صورت باینری می‌خواند و در متغیر `input` ذخیره می‌کند.
-   - `output = remove(input)`: تابع `remove` از کتابخانه `rembg` روی تصویر ورودی اعمال شده و پس‌زمینه تصویر حذف می‌شود. نتیجه در متغیر `output` ذخیره می‌شود.
-   - `o.write(output)`: تصویر خروجی (با پس‌زمینه حذف شده) را در فایل خروجی می‌نویسد.
+3. Opening Input and Output Files:
+   - `with open(input_path, "rb") as i:`: Opens the input file in binary read mode.
+   - `with open(output_path, "wb") as o:`: Opens the output file in binary write mode.
+
+4. Reading, Processing, and Writing the Image:
+   - `input = i.read()`: Reads the content of the input file in binary format and stores it in the `input` variable.
+   - `output = remove(input)`: Applies the `remove` function from the `rembg` library to the input image, removing the background. The result is stored in the `output` variable.
+   - `o.write(output)`: Writes the processed image (with the background removed) to the output file.
+
+**This code reads an image named "rayan.jpg", removes its background, and saves the result as "output.jpg".
